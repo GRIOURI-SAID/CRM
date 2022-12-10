@@ -1,0 +1,27 @@
+config:
+    runTime: 'NodeJs'
+    version: '16'
+    framework: 'React'
+    buildCommand: 'npm run build'
+    buildDir: 'build'
+    runCommand: 'npm run start'
+    installCommand: "npm install"
+    icon: "src/logo.svg"
+    screenshot: "src/screenshot.png"
+ports:
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "443"
+    targetPort: "3000"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+    login: ""
+    password: ""
+environments:
+    -  key: 'ENV'
+       value: 'production'
+webUI:
+  - url: "https://[CI_CD_DOMAIN]"
+    label: "Website"       
